@@ -25,6 +25,7 @@ nav {
 nav .logo h1 {
     display: inline;
     margin-right: 1em;
+    margin-bottom: 1em;
 }
 
 nav ul {
@@ -34,7 +35,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 1em;
+    margin: 0 2em;
 }
 
 nav ul li a {
@@ -118,4 +119,46 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+     
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .signup-form {
+        padding: 1.5em;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.5em;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .signup-main {
+        height: auto;
+        padding: 1em 0;
+    }
+
+    .signup-form {
+        padding: 1em;
+        max-width: 95%;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
 }
