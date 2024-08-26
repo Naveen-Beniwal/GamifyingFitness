@@ -14,4 +14,7 @@ router.get("/signUp", function (req, res) {
 router.get("/error", function (req, res) {
   res.render("error");
 });
+router.get("/exercises", function (req, res) {
+  res.render("exercises");
+});
 module.exports = router;
