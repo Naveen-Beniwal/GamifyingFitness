@@ -1,0 +1,15 @@
+/* public/stylesheets/style.css */
+/* @import '~bootstrap/dist/css/bootstrap.min.css';
+ */
+ /* public/stylesheets/style.css */
+ @import 'bootstrap.min.css';
+ /* Directly import Bootstrap CSS */
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
