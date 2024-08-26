@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - FitnessPro</title>
+    <link rel="stylesheet" href="/stylesheets/signUp.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>FitnessPro</h1>
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+
+        <li><a href="/exercises">Exercises</a></li>
+        <li><a href="/friends">Friends</a></li>
+        <li><a href="/comparison">Compare</a></li>
+      </ul>
+    </nav>
+
+    <main class="signup-main">
+      <section class="signup-form">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 FitnessPro. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

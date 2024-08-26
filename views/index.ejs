@@ -1,13 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Website</title>
+    <link rel="stylesheet" href="/stylesheets/homePage.css" />
   </head>
-  <body>
-    <!-- <h1><%= title %></h1>
-      -->
 
-    <p>Welcome to <%= title %></p>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <h1>FitnessPro</h1>
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="#">Friends</a></li>
+        <li><a href="#">Exercises</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Your Fitness Journey Starts Here</h1>
+        <p>
+          Track your progress, stay motivated, and reach your fitness goals with
+          personalized workouts.
+        </p>
+        <a href="/login"><button class="cta-button">Get Started</button></a>
+      </div>
+    </header>
+
+    <!-- Fitness Stats Section -->
+    <section class="stats">
+      <h2>Your Fitness Stats</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>Total Steps</h3>
+          <p><span id="steps">0</span> steps</p>
+        </div>
+        <div class="stat-box">
+          <h3>Running Speed</h3>
+          <p><span id="speed">0</span> km/h</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exercise Videos Section -->
+    <section class="videos">
+      <h2>Exercise Videos for Busy Schedules</h2>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls>
+            <source src="path_to_video.mp4" type="video/mp4" />
+          </video>
+          <p>Full Body Workout</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="path_to_video.mp4" type="video/mp4" />
+          </video>
+          <p>Core Strengthening</p>
+        </div>
+        <div class="video-card">
+          <video controls>
+            <source src="path_to_video.mp4" type="video/mp4" />
+          </video>
+          <p>Yoga for Relaxation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 FitnessPro. All rights reserved.</p>
+    </footer>
+
+    <script src="/javascripts/homePage.js"></script>
   </body>
 </html>

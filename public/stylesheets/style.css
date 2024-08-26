@@ -1,15 +1,21 @@
-/* public/stylesheets/style.css */
-/* @import '~bootstrap/dist/css/bootstrap.min.css';
- */
- /* public/stylesheets/style.css */
+
  @import 'bootstrap.min.css';
  /* Directly import Bootstrap CSS */
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+ :root {
+   --primary-color: #4a90e2;
+   --bg-color: #f4f7fa;
+   --text-color: #333;
+   --sidebar-bg: #ffffff;
+   --sidebar-hover: #e6f0ff;
+ }
 
-a {
-  color: #00B7FF;
-}
+ body {
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: var(--bg-color);
+   color: var(--text-color);
+ }
+
+ 
