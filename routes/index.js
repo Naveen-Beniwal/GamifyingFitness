@@ -17,4 +17,10 @@ router.get("/error", function (req, res) {
 router.get("/exercises", function (req, res) {
   res.render("exercises");
 });
+router.get("/videos", function (req, res) {
+  res.render("videos");
+});
+router.get("/friends", function (req, res) {
+  res.render("friends");
+});
 module.exports = router;

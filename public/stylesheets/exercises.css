@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 1.5em;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Main Exercise Section */
+.exercise-section {
+    padding: 3em 2em;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.exercise-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: #34495e;
+    font-weight: bold;
+}
+
+/* Exercise Grid */
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 2em 0;
+}
+
+.exercise-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 1em;
+    text-align: left;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.exercise-card h3 {
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    color: #34495e;
+}
+
+.exercise-card p {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .exercise-section {
+        padding: 2em 1em;
+    }
+
+    .exercise-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .exercise-card {
+        padding: 1em;
+    }
+
+    .exercise-card h3 {
+        font-size: 1.2em;
+    }
+
+    .exercise-card p {
+        font-size: 0.9em;
+    }
+}
