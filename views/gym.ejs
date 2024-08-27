@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Gyms Near You</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+    />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/gym.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Find Gyms Near You</h1>
+    </header>
+    <section class="gym-search">
+      <input type="text" id="gymSearch" placeholder="Search for a gym..." />
+    </section>
+
+    <section class="gym-map">
+      <h2>Gym Locations</h2>
+      <div id="map"></div>
+    </section>
+
+    <section class="gym-list">
+      <% gyms.forEach(gym => { %>
+      <div class="gym-card">
+        <h2><%= gym.name %></h2>
+        <p><strong>Location:</strong> <%= gym.location %></p>
+        <p><strong>Price:</strong> ₹<%= gym.price %>/month</p>
+        <p><strong>Features:</strong> <%= gym.features.join(', ') %></p>
+
+        <div class="rating">
+          <strong>Rating:</strong>
+          <span class="stars"><%= gym.rating %>/5</span>
+        </div>
+
+        <div class="reviews">
+          <h3>Reviews</h3>
+          <ul>
+            <% gym.reviews.forEach(review => { %>
+            <li><strong><%= review.user %>:</strong> <%= review.comment %></li>
+            <% }) %>
+          </ul>
+        </div>
+
+        <button class="toggle-review">Add Review</button>
+        <div class="review-form hidden">
+          <form action="/addReview" method="POST">
+            <input type="hidden" name="gymId" value="<%= gym.id %>" />
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" name="rating" min="1" max="5" required />
+            <label for="comment">Comment:</label>
+            <textarea name="comment" required></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </section>
+
+    <script src="/javascripts/gym.js"></script>
+  </body>
+</html>
