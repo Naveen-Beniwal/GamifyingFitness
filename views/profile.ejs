@@ -36,11 +36,7 @@
       <div class="cards flex">
         <% user.posts.forEach(function(post){ %>
         <div class="card" style="width: 18rem">
-          <img
-            src="/images/uploads/<%=post.image %>"
-            class="card-img-top"
-            alt="error"
-          />
+          <img src="<%=post.image %>" class="card-img-top" alt="error" />
           <div class="card-body">
             <h5 class="card-title"><%=post.imageText%></h5>
           </div>

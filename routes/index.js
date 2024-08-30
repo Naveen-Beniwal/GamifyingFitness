@@ -5,6 +5,15 @@ const Post = require("../models/post.model");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const upload = require("./multer");
+
+const multer = require("multer");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("cloudinary").v2;
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 // Passport Local Strategy
 passport.use(new LocalStrategy(User.authenticate()));
 
@@ -130,7 +139,41 @@ router.get("/gym", (req, res) => {
   ];
   res.render("gym", { gyms });
 });
-// upload route for posts
+// upload route for posts on local
+// router.post(
+//   "/upload",
+//   isLoggedIn,
+//   upload.single("file"),
+//   async function (req, res) {
+//     try {
+//       if (!req.file) {
+//         console.log("No file uploaded");
+//         return res.status(400).send("No files were given");
+//       }
+
+//       const user = await User.findOne({ username: req.session.passport.user });
+//       if (!user) {
+//         console.log("User not found");
+//         return res.status(404).send("User not found");
+//       }
+
+//       const post = await Post.create({
+//         image: req.file.filename,
+//         imageText: req.body.fileCaption,
+//         user: user._id,
+//       });
+
+//       user.posts.push(post._id);
+//       await user.save();
+
+//       res.redirect("/profile");
+//     } catch (err) {
+//       console.error("Upload error:", err);
+//       res.status(500).send("Server error");
+//     }
+//   }
+// );
+// upload route for files on sever
 router.post(
   "/upload",
   isLoggedIn,
@@ -148,8 +191,11 @@ router.post(
         return res.status(404).send("User not found");
       }
 
+      const imageUrl = req.file.path; // This should be the full Cloudinary URL
+      console.log("Uploaded Image URL:", imageUrl);
+
       const post = await Post.create({
-        image: req.file.filename,
+        image: imageUrl,
         imageText: req.body.fileCaption,
         user: user._id,
       });
