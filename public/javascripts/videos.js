@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 1,
       title: "Full Body Workout",
-      videoUrl: "/images/vid1.mp4",
+      videoUrl: "",
     },
     {
       id: 2,
       title: "Yoga for Flexibility",
-      videoUrl: "/images/vid2.mp4",
+      videoUrl: "",
     },
     {
       id: 2,
       title: "Core Development",
-      videoUrl: "/images/vid3.mp4",
+      videoUrl: "",
     },
     // Add more objects here or fetch dynamically from an API.
   ];

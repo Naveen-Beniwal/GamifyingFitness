@@ -23,25 +23,32 @@
     <main class="signup-main">
       <section class="signup-form">
         <h2>Sign Up</h2>
-        <form action="/signup" method="post">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-
-          <label for="confirm-password">Confirm Password</label>
+        <form action="/register" method="post">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="detail"
+          /><br />
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            class="detail"
+          /><br />
+          <input
+            type="text"
+            name="fullName"
+            placeholder="FullName"
+            class="detail"
+          /><br />
           <input
             type="password"
-            id="confirm-password"
-            name="confirm-password"
-            required
+            name="password"
+            placeholder="Password"
+            class="detail"
           />
-
-          <button type="submit">Sign Up</button>
+          <input type="submit" class="btn int" value="Register Account" />
         </form>
         <p>Already have an account? <a href="/login">Login</a></p>
       </section>
