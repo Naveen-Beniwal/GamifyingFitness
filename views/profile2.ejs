@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Innovative User Account</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/profile2.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.3.1/luxon.min.js"></script>
     <style>
       @keyframes float {
@@ -34,12 +36,26 @@
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
       }
+  
+
+
     </style>
   </head>
 
   <body
     class="bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center p-4"
   >
+    <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-container {
+      background-color: rgba(255, 255, 255, 0.1); /* Adjust as needed */
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-400 via-blue-500 to-black-500 min-h-screen flex items-center justify-center p-4">
+
+
     <div
       x-data="userAccount()"
       class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl w-full max-w-6xl overflow-hidden"
@@ -102,6 +118,19 @@
               ></button>
             </template>
           </div>
+          <!-- Logout Button -->
+ <a href="/logout"> <button @click="logout" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 ease-in-out mt-4">
+  Logout
+  </button></a>
+  <div class="container flex">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="text" name="fileCaption" class="rounded mb-2" />
+          <input type="file" name="file" class="rounded"/>
+          <input type="submit" class="b border-2 border-black bg-blue-500 text-white p-2 rounded-lg cursor-pointer hover:bg-blue-600" />
+
+
+        </form>
+        </div>
         </div>
         <div class="lg:w-3/4 p-8">
           <!-- Profile Section -->

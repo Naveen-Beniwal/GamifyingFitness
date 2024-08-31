@@ -215,7 +215,7 @@ router.post(
       user.posts.push(post._id);
       await user.save();
 
-      res.redirect("/profile");
+      res.redirect("/profile2");
     } catch (err) {
       console.error("Upload error:", err);
       res.status(500).send("Server error");
