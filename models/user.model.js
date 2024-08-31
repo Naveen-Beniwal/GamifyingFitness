@@ -39,6 +39,9 @@ const userSchema = new mongoose.Schema({
       ref: "Post",
     },
   ],
+  profileImage: {
+    type: String,
+  },
 });
 
 userSchema.plugin(passportLocalMongoose); // This handles password hashing and validation

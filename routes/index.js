@@ -54,7 +54,7 @@ router.post("/register", function (req, res) {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/profile",
+    successRedirect: "/profile2",
     failureRedirect: "/login",
     failureFlash: true,
   }),
@@ -70,17 +70,29 @@ function isLoggedIn(req, res, next) {
   res.redirect("/login");
 }
 
-// Profile Route
-router.get("/profile", isLoggedIn, async (req, res) => {
-  const user = await User.findOne({
-    username: req.session.passport.user,
-  }).populate("posts");
-  res.render("profile", { user });
-});
+// // Profile Route
+// router.get("/profile", isLoggedIn, async (req, res) => {
+//   const user = await User.findOne({
+//     username: req.session.passport.user,
+//   }).populate("posts");
+//   res.render("profile", { user });
+// });
 
 // Login Route
 router.get("/login", (req, res) => {
   res.render("login");
+});
+// profile2
+router.get("/profile2", isLoggedIn, async (req, res) => {
+  try {
+    const user = await User.findOne({
+      username: req.session.passport.user,
+    }).populate("posts");
+    res.render("profile2", { user });
+  } catch (error) {
+    console.error(error);
+    res.redirect("/");
+  }
 });
 
 // Signup Route
