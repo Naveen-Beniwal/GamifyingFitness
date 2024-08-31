@@ -8,8 +8,11 @@ const passport = require("passport");
 const flash = require("connect-flash");
 const User = require("./models/user.model"); // Adjust the path if necessary
 const indexRouter = require("./routes/index");
+// Ignore favicon requests
 
 const app = express();
+// Handle favicon requests
+app.use("/favicon.ico", (req, res) => res.status(204).end());
 
 // View engine setup
 app.set("views", path.join(__dirname, "views"));
