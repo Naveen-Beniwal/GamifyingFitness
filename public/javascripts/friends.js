@@ -2,19 +2,19 @@
 const friends = [
   {
     name: "John Doe",
-    profilePic: "/images/p1.jpg",
+    profilePic: "...pg",
     description: "Fitness enthusiast and personal trainer.",
     link: "#",
   },
   {
     name: "Jane Smith",
-    profilePic: "/images/p2.jpg",
+    profilePic: "...",
     description: "Yoga instructor and wellness coach.",
     link: "#",
   },
   {
     name: "Mike Johnson",
-    profilePic: "/images/p3.jpg",
+    profilePic: "...",
     description: "Marathon runner and sports coach.",
     link: "#",
   },
